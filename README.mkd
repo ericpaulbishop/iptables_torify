@@ -9,3 +9,5 @@ This is a way to make a really light-weight version of Tails.  If you don't need
 
 Right now the script assumes a transparent proxy port of 9051 and a dns proxy port of 9061, with the tor username of debian-tor.  You'll need to change these variables in the script if you have a different configuration.  An example torrc file is included, to show how to configure Tor.  This was tested on Xubuntu 12.04.
 
+There is an install script which, if you run it as root from a directory where you have the project files (torrc, torify.init), will install tor, configure it with the associated torrc file and then setup the iptables script to run on boot.  Thus these rules will be enabled at system boot, and all traffic will be anonymized.
+
