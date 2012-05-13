@@ -1,0 +1,11 @@
+# iptables_torify: Send all traffic through Tor using iptables
+
+This is a script that adds iptables rules that force all traffic including DNS requests through Tor.  Only traffic other than DNS requests destined for local/loopback addresses is not passed through Tor.
+
+All non-local UDP/ICMP traffic is blocked
+
+
+This is a way to make a really light-weight version of Tails.  If you don't need everything to be extremely secure (e.g. no javascript, no persistent storage), but do want to make sure traffic goes through Tor this is a good way to achieve this fairly simply.  Tor will need to be running.
+
+Right now the script assumes a transparent proxy port of 9051 and a dns proxy port of 9061, with the tor username of debian-tor.  You'll need to change these variables in the script if you have a different configuration.  An example torrc file is included, to show how to configure Tor.  This was tested on Xubuntu 12.04.
+
