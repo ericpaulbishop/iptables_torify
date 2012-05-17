@@ -15,7 +15,7 @@
 tor_user="debian-tor"
 dns_port="9061"
 trans_port="9051"
-
+tor_virtual_network="10.66.0.0/255.255.0.0"
 
 
 do_start()
@@ -48,6 +48,14 @@ do_start()
 		iptables -t $table -A OUTPUT -p udp --dport $match_dns_port -j $target
 		iptables -t $table -A OUTPUT -p tcp --dport $match_dns_port -j $target
 
+
+		#handle hidden_service traffic
+		if [ -n "$tor_virtual_network" ] ; then
+			if [ "$table" = "nat" ] ; then
+				target="REDIRECT --to-ports $trans_port"
+			fi
+			iptables -t $table -A OUTPUT -d $tor_virtual_network -p tcp -j $target
+		fi
 
 
 		# don't send local/loopback stuff through tor
