@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### BEGIN INIT INFO
-# Provides:          tor
+# Provides:          torify
 # Required-Start:    $local_fs $remote_fs $network $named $time
 # Required-Stop:     $local_fs $remote_fs $network $named $time
 # Should-Start:      $syslog

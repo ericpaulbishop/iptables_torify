@@ -2,7 +2,7 @@ TransPort 9051
 TransListenAddress 127.0.0.1
 DNSPort   9061
 DNSListenAddress 127.0.0.1
-Log "info syslog"
+Log "notice syslog"
 
 VirtualAddrNetwork 10.66.0.0/255.255.0.0
 AutomapHostsOnResolve 1
