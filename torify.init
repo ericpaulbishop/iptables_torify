@@ -14,7 +14,7 @@
 
 tor_user="debian-tor"
 dns_port="9061"
-trans_port="9051"
+trans_port="9040"
 tor_virtual_network="10.66.0.0/255.255.0.0"
 
 
